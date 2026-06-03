@@ -1,7 +1,9 @@
+/*tout*/
 body{
     margin: 0;
 }
 
+/*nav*/
 
 nav {
     background-color: black;
@@ -36,3 +38,4 @@ a{
     margin: 0;       
     gap: 20px;    
 }
+
