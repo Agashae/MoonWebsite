@@ -1,6 +1,7 @@
 /*tout*/
 body{
     margin: 0;
+    font-family: 'Space Mono', monospace;
 }
 
 /*nav*/
@@ -11,6 +12,7 @@ nav {
     justify-content: space-between; 
     align-items: center; 
     padding: 10px; 
+    margin-bottom: 1px;
 }
 
 .logo {
@@ -38,4 +40,84 @@ a{
     margin: 0;       
     gap: 20px;    
 }
+
+/*presentation*/
+.Presentation {
+    display: flex;
+    align-items: center;
+    gap: 30px;          
+    margin: 0 auto;      
+    background-color: black;
+}
+
+.contenu-texte{
+    color: rgb(209, 209, 209);
+}
+
+/*chiffres*/
+.chiffres {
+    background-color: rgb(11, 11, 22);
+    color: #ffffff;
+    padding: 40px 20px;
+}
+
+.chiffres h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 2rem;
+}
+
+.grille-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: rgba(255, 255, 255, 0.1); 
+    gap: 1px; 
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.carte-stat {
+    background-color: rgb(11, 11, 22); 
+    padding: 40px 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.carte-stat h3 {
+    font-size: 2.2rem;
+    font-weight: 800;
+    margin: 0 0 8px 0;
+    letter-spacing: 1px;
+}
+
+.carte-stat .label {
+    font-size: 0.8rem;
+    color: #8a8da4; 
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+}
+
+.carte-stat p {
+    font-size: 1rem;
+    color: #616479; 
+    margin: 0;
+    line-height: 1.5;
+}
+
+
+.carte-stat:hover{
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+/*phases*/
+
+.Phases{
+        background-color: rgb(0, 0, 0);
+}
+
+
+
 
