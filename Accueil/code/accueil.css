@@ -23,7 +23,7 @@ nav {
 }
 
 nav img{
-    width: 105px;
+    width: 130px;
     /*inverser les couleurs logo*/
       filter: invert(100%);
 }
@@ -128,6 +128,7 @@ h2 {
     align-items: center;
 }
 
+
 .Phases img:hover{
 transform: scale(1.1);
 }
@@ -140,6 +141,14 @@ transform: scale(1.1);
     margin: 3%;
 }
 
+.Phases table img{
+    width: 300px;
+}
+
+table td{
+padding: 1%;
+}
+
 
 /*exploration*/
 .Exploration{
@@ -150,3 +159,10 @@ transform: scale(1.1);
     background-color: #dddddd;
 }
 
+.Exploration img{
+    width: 600px;
+}
+
+.Exploration ul{
+    list-style-type: none; /* Supprime les puces */
+}
