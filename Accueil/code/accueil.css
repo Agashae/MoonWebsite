@@ -156,7 +156,7 @@ padding: 1%;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-color: #dddddd;
+    background-color: #7d7d7d;
 }
 
 .Exploration img{
@@ -173,6 +173,10 @@ padding: 1%;
   color: #ffffff;
   padding: 40px 20px;
   font-family: sans-serif;
+}
+
+.Galerie .item:hover{
+    transform: scale(1.05);
 }
 
 .galerie-container {
@@ -203,4 +207,46 @@ padding: 1%;
   height: 100%;
   object-fit: cover; /* Remplit le carré sans déformer la Lune */
   display: block;
+}
+
+.animation-container {
+  width: 100%;
+  overflow: hidden;
+  padding: 20px 0;
+  background: transparent;
+}
+
+.roulant {
+  width: 5%;  
+  border-radius: 50%; 
+  object-fit: cover;
+  
+  animation: rouleEtBouge 10s linear infinite;
+}
+
+/* animation globale */
+@keyframes rouleEtBouge {
+  0% {
+    transform: translateX(-100px) rotate(0deg); 
+  }
+  100% {
+    transform: translateX(100vw) rotate(360deg);
+  }
+}
+
+/*footer*/
+footer {
+    background-color: rgb(107, 107, 107);
+    display: flex;
+    justify-content: space-around; 
+    align-items: center; 
+    margin-bottom: 1px;
+    padding: 1%;
+}
+
+
+footer img{
+    width: 130px;
+    /*inverser les couleurs logo*/
+      filter: invert(100%);
 }
