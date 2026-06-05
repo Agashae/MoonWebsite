@@ -166,3 +166,41 @@ padding: 1%;
 .Exploration ul{
     list-style-type: none; /* Supprime les puces */
 }
+
+/*galerie images*/
+.Galerie {
+  background-color: #060913;
+  color: #ffffff;
+  padding: 40px 20px;
+  font-family: sans-serif;
+}
+
+.galerie-container {
+  max-width: 1200px;
+  margin: 0 auto 60px auto;
+}
+
+.galerie-container h2 {
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+  font-family: 'Playfair Display', Georgia, serif;
+}
+
+.galerie-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 colonnes de tailles identiques */
+  gap: 15px; /* Espace égal entre toutes les photos */
+}
+
+.item {
+  width: 100%;
+  aspect-ratio: 1 / 1; /*format carré parfait pour chaque bloc */
+  overflow: hidden; /* Coupe ce qui dépasse proprement */
+}
+
+.item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Remplit le carré sans déformer la Lune */
+  display: block;
+}
