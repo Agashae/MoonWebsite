@@ -188,8 +188,8 @@ padding: 1%;
 
 .galerie-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* 3 colonnes de tailles identiques */
-  gap: 15px; /* Espace égal entre toutes les photos */
+  grid-template-columns: repeat(3, 1fr); 
+  gap: 15px; 
 }
 
 .item {
