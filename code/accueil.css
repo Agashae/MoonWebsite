@@ -48,12 +48,24 @@ a {
     display: flex;
     align-items: center;
     padding: 5%;
-    margin: 0 auto;      
+    margin: 0 auto;
     background-color: black;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
 }
 
-.contenu-texte{
+.Presentation .lune {
+    max-width: 100%;
+    height: auto;
+}
+
+.contenu-texte {
     color: rgb(209, 209, 209);
+
+    /* ajout */
+    flex: 1;
+    min-width: 250px;
 }
 
 /*chiffres*/
@@ -76,11 +88,11 @@ h2 {
 
 .grille-stats {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); 
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     max-width: 1200px;
     margin: 0 auto;
-    background-color: rgba(255, 255, 255, 0.1); 
-    gap: 1px; 
+    background-color: rgba(255, 255, 255, 0.1);
+    gap: 1px;
     border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
@@ -129,25 +141,40 @@ h2 {
     align-items: center;
 }
 
-
-.Phases img:hover{
-transform: scale(1.1);
+/*2 GIF */
+.Phases div {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
 }
 
-.MoonEmojis{
-        font-size: 3rem;
+.Phases img {
+    max-width: 100%;
+    height: auto;
+}
+.Phases img:hover {
+    transform: scale(1.1);
 }
 
-.Phases table{
+.MoonEmojis {
+    font-size: clamp(1.5rem, 5vw, 3rem);
+}
+
+.Phases table {
     margin: 3%;
+    width: 100%;
+    max-width: 900px;
 }
 
-.Phases table img{
-    width: 300px;
+.Phases table img {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
 }
 
-table td{
-padding: 1%;
+table td {
+    padding: 1%;
 }
 
 
