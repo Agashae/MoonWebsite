@@ -2,24 +2,43 @@
 
  Site web éducatif sur la Lune, réalisé durant le **DemoMot 2025-2026** — puis transformé en application web installable (PWA)
 
+ **[Ouvrir AgaMoon](https://agashae.github.io/MoonWebsite/code/accueil.html)**
+
 ---
 
 ## À propos du projet
 
 **AgaMoon** est un site web dédié à la Lune : données scientifiques, phases lunaires, histoire de l'exploration spatiale et galerie photo personnelle prise à l'iPhone 16 et au Samsung S24 Ultra.
 
-Le projet a été réalisé entièrement en **HTML / CSS** dans le cadre du **DemoMot**, une période de 4 semaines dédiée à la création de projets personnels à l'école.
+Le projet a été réalisé entièrement en **HTML / CSS** dans le cadre du **DemoMot**, du **01.06.2026** au **09.06.2026**.
 
 ---
 
 ## Les 4 semaines de développement
 
-| Semaine | Travail réalisé |
-|---------|----------------|
-| **Semaine 1** | Conception du projet, choix du thème, structure HTML de base |
-| **Semaine 2** | Mise en page CSS, section chiffres, phases de la Lune |
-| **Semaine 3** | Section exploration spatiale, galerie photos, animation planètes |
-| **Semaine 4** | Restructuration des dossiers, PWA, mise en ligne sur GitHub Pages |
+| Étape | Durée | Date |
+|-------|-------|------|
+| Découverte du projet | 1 séquence de 2 périodes | 01.06.26 |
+| Choix du projet | 1 séquence de 1 période | 01.06.26 |
+| Lecture du CdC et répartition des tâches | 1 séquence de 2 périodes | 01.06.26 |
+| Création de notre CdC | 1 séquence de 1 période | 01.06.26 |
+| Rédaction des règles du jeu | 1 séquence de 1 période | 01.06.26 |
+| Élaboration de la banque de questions | 1 séquence de 2 périodes | 02.06.26 |
+| Aider Noah à faire le AideCode pour le cadavre exquis | 1 séquence de 2 périodes | 02.06.26 |
+| Création de la vidéo de présentation du jeu | 1 séquence de 1 période | 02.06.26 |
+| Aider Nathan avec son problème d'envoi de vidéo sur PC | 1 séquence de 1 période | 02.06.26 |
+| Aider Liam avec son PowerPoint | 1 séquence de 1 période | 02.06.26 |
+| Test interne du jeu | 1 séquence de 1 période | 02.06.26 |
+| Discussion avec M. Duding sur les projets et problèmes | 1 séquence de 2 périodes | 04.06.26 |
+| Création d'un fichier Word sur les besoins et solutions pour les 3 projets | 1 séquence de 2 périodes | 04.06.26 |
+| Tests avec VM pour contrôle à distance PC1→PC2 (Parsec, TeamViewer, Bureau à distance, Teams) | 1 séquence de 3 périodes | 04.06.26 |
+| Projet personnel — création sur GitHub, recherche d'idée et inspirations | 1 séquence de 2 périodes | 04.06.26 |
+| Projet personnel — page de base, structure HTML / Figma | 1 séquence de 4 périodes | 05.06.26 |
+| Projet personnel — CSS, finalisation avec images de Massimo | 1 séquence de 5 périodes | 08.06.26 |
+| Démo de chaque projet de la classe, discussion fonctionnalités/améliorations | 1 séquence de 2 périodes | 08.06.26 |
+| Rendre AgaMoon public et le transformer en PWA | 1 séquence de 3 périodes | 09.06.26 |
+| Création du README et rendu responsive | 1 séquence de 3 périodes | 09.06.26 |
+| Amélioration de la structure et optimisation du code | 1 séquence de 2 périodes | 09.06.26 |
 
 ---
 
@@ -35,10 +54,12 @@ MoonWebsite/
 │   ├── MoonPhotos/         # Photos perso (iPhone 16 & Samsung S24 Ultra)
 │   │   ├── Agashae/
 │   │   └── Massimo/
-│   └── Transparent/        # Planètes animées (footer)
+│   │── Screenshots/ 
+│   │── Transparent/        # Planètes animées (footer)
+│   │── Images générales/   # Planètes animées (footer)
+    └── LogoWebSite.png     # Logo AgaMoon
 ├── manifest.json           # Config PWA
 ├── service-worker.js       # Cache hors-ligne
-├── LogoWebSite.png         # Logo AgaMoon
 └── README.md
 ```
 
@@ -84,7 +105,18 @@ AgaMoon est une **Progressive Web App** — elle peut être installée comme une
 2. Clique sur l'icône ➕ à droite de la barre d'adresse
 3. Clique sur **Installer**
 
+### Captures d'écran
+
+| Installation sur Chrome PC | App ouverte sur Chrome PC | App sur l'écran d'accueil iPhone |
+|:-:|:-:|:-:|
+| <img src="img/Screenshots/InstallerAppChromePC.png" width="300"> | <img src="img/Screenshots/AppChromeOnPC.png" width="300"> | <img src="img/Screenshots/AppHomeOniPhone.jpg" width="200"> |
+
+| App ouverte sur Safari iPhone | Site web dans Safari iPhone | Menu de partage Safari iPhone |
+|:-:|:-:|:-:|
+| <img src="img/Screenshots/AppSafariOniPhone.jpg" width="200"> | <img src="img/Screenshots/WebsiteSafariOniPhone.jpg" width="200"> | <img src="img/Screenshots/WebsiteShareOniPhone.jpg" width="200"> |
+
 ### Fichiers PWA
+>Cette partie, c'est Claude qui m'a aidé à la réalisé.
 
 **`manifest.json`** — déclare l'app (nom, icône, couleurs, mode d'affichage)
 
