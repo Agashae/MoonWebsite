@@ -1,19 +1,27 @@
-const CACHE_NAME = 'agamoon-v1';
+const CACHE_NAME = 'agamoon-v2'; // On passe en v2 pour forcer la mise à jour !
 
 // Fichiers à mettre en cache pour le mode hors-ligne
 const FILES_TO_CACHE = [
-    '/code/accueil.html',
-    '/code/accueil.css',
-    '/LogoWebSite.png',
-    '/img/photo-1657637760839-772d81f3e334.jpg',
-    '/img/moon-29.gif',
-    '/img/Luna2.jpg',
-    '/img/Luna9.jpg',
-    '/img/Apollo11.jpg',
-    '/img/Apollo17.jpg',
-    '/img/artemis-3.jpg',
-    '/img/Chandrayaan-3.jpg',
-    "/img/Chang'e 4.jpg",
+    '/',
+    '/index.html',
+    '/style.css',
+    '/manifest.json',
+    '/img/LogoWebSite.png',
+    
+    // Images générales (Missions)
+    '/img/Images generales/photo-1657637760839-772d81f3e334.jpg',
+    '/img/Images generales/moon-29.gif',
+    '/img/Images generales/Luna2.jpg',
+    '/img/Images generales/Luna9.jpg',
+    '/img/Images generales/Apollo11.jpg',
+    '/img/Images generales/Apollo17.jpg',
+    '/img/Images generales/artemis-3.jpg',
+    '/img/Images generales/Chandrayaan-3.jpg',
+    "/img/Images generales/Chang'e 4.jpg",
+    '/img/Images generales/TheHuntforArtemis.jpeg',
+    '/img/Images generales/bg-minimalist.jpg',
+    
+    // 8 Phases
     '/img/8Phases/lune-libration-phases.gif',
     '/img/8Phases/phase-nouvelle-lune.jpg',
     '/img/8Phases/premier-croissant.jpg',
@@ -23,6 +31,8 @@ const FILES_TO_CACHE = [
     '/img/8Phases/phase-gibbeuse-decroissante.jpg',
     '/img/8Phases/phase-dernier-quartier.jpg',
     '/img/8Phases/dernier-croissant.jpg',
+    
+    // Transparent (Planètes)
     '/img/Transparent/earth.png',
     '/img/Transparent/Jupiter.png',
     '/img/Transparent/Mars.webp',
@@ -71,15 +81,18 @@ self.addEventListener('fetch', (event) => {
                 return response; // Servi depuis le cache
             }
             return fetch(event.request).then((networkResponse) => {
-                // On met aussi en cache les nouvelles ressources
-                return caches.open(CACHE_NAME).then((cache) => {
-                    cache.put(event.request, networkResponse.clone());
-                    return networkResponse;
-                });
+                // On met aussi en cache les nouvelles ressources (ex: photos perso si chargées)
+                if (networkResponse.status === 200) {
+                    const responseClone = networkResponse.clone();
+                    caches.open(CACHE_NAME).then((cache) => {
+                        cache.put(event.request, responseClone);
+                    });
+                }
+                return networkResponse;
             }).catch(() => {
                 // Hors-ligne et pas en cache : page de fallback
                 if (event.request.destination === 'document') {
-                    return caches.match('/code/accueil.html');
+                    return caches.match('/index.html');
                 }
             });
         })
