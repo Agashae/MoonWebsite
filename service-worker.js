@@ -1,14 +1,14 @@
-const CACHE_NAME = 'agamoon-v7';
+const CACHE_NAME = 'agamoon-v9';
+const OFFLINE_URL = 'https://agashae.space/';
 
 self.addEventListener('install', event => {
     event.waitUntil(
         caches.open(CACHE_NAME).then(cache => {
             return cache.addAll([
-                '/MoonWebsite/',
-                '/MoonWebsite/index.html',
-                '/MoonWebsite/style.css',
-                '/MoonWebsite/manifest.json',
-                '/MoonWebsite/img/LogoWebSite.png'
+                OFFLINE_URL,
+                'https://agashae.space/style.css',
+                'https://agashae.space/manifest.json',
+                'https://agashae.space/img/LogoWebSite.png'
             ]);
         })
     );
@@ -32,7 +32,7 @@ self.addEventListener('fetch', event => {
         caches.match(event.request)
             .then(response => response || fetch(event.request))
             .catch(() => {
-                return caches.match('/MoonWebsite/index.html');
+                return caches.match(OFFLINE_URL);
             })
     );
 });
