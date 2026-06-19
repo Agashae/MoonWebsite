@@ -2,7 +2,7 @@
   "name": "AgaMoon - Découvrir la Lune",
   "short_name": "AgaMoon",
   "description": "Explorez la Lune à travers les données scientifiques, son histoire et de magnifiques galeries photos.",
-  "start_url": "/index.html",
+  "start_url": "/MoonWebsite/",
   "display": "standalone",
   "background_color": "#05050f",
   "theme_color": "#000000",

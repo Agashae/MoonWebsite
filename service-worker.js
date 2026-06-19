@@ -1,48 +1,48 @@
-const CACHE_NAME = 'agamoon-v2'; // On passe en v2 pour forcer la mise à jour !
+const CACHE_NAME = 'agamoon-v3'; // On incrémente pour forcer la mise à jour
 
 // Fichiers à mettre en cache pour le mode hors-ligne
 const FILES_TO_CACHE = [
-    '/',
-    '/index.html',
-    '/style.css',
-    '/manifest.json',
-    '/img/LogoWebSite.png',
+    '/MoonWebsite/',
+    '/MoonWebsite/index.html',
+    '/MoonWebsite/style.css',
+    '/MoonWebsite/manifest.json',
+    '/MoonWebsite/img/LogoWebSite.png',
     
-    // Images générales (Missions)
-    '/img/Images generales/photo-1657637760839-772d81f3e334.jpg',
-    '/img/Images generales/moon-29.gif',
-    '/img/Images generales/Luna2.jpg',
-    '/img/Images generales/Luna9.jpg',
-    '/img/Images generales/Apollo11.jpg',
-    '/img/Images generales/Apollo17.jpg',
-    '/img/Images generales/artemis-3.jpg',
-    '/img/Images generales/Chandrayaan-3.jpg',
-    "/img/Images generales/Chang'e 4.jpg",
-    '/img/Images generales/TheHuntforArtemis.jpeg',
-    '/img/Images generales/bg-minimalist.jpg',
+    // Images générales (Missions) - avec le bon nom de dossier
+    '/MoonWebsite/img/Images générales/photo-1657637760839-772d81f3e334.jpg',
+    '/MoonWebsite/img/Images générales/moon-29.gif',
+    '/MoonWebsite/img/Images générales/Luna2.jpg',
+    '/MoonWebsite/img/Images générales/Luna9.jpg',
+    '/MoonWebsite/img/Images générales/Apollo11.jpg',
+    '/MoonWebsite/img/Images générales/Apollo17.jpg',
+    '/MoonWebsite/img/Images générales/artemis-3.jpg',
+    '/MoonWebsite/img/Images générales/Chandrayaan-3.jpg',
+    '/MoonWebsite/img/Images générales/Chang\'e 4.jpg',
+    '/MoonWebsite/img/Images générales/TheHuntforArtemis.jpeg',
+    '/MoonWebsite/img/Images générales/bg-minimalist.jpg',
     
     // 8 Phases
-    '/img/8Phases/lune-libration-phases.gif',
-    '/img/8Phases/phase-nouvelle-lune.jpg',
-    '/img/8Phases/premier-croissant.jpg',
-    '/img/8Phases/phase-premier-quartier.jpg',
-    '/img/8Phases/phase-gibbeuse-croissante.jpg',
-    '/img/8Phases/phase-pleine-lune.jpg',
-    '/img/8Phases/phase-gibbeuse-decroissante.jpg',
-    '/img/8Phases/phase-dernier-quartier.jpg',
-    '/img/8Phases/dernier-croissant.jpg',
+    '/MoonWebsite/img/8Phases/lune-libration-phases.gif',
+    '/MoonWebsite/img/8Phases/phase-nouvelle-lune.jpg',
+    '/MoonWebsite/img/8Phases/premier-croissant.jpg',
+    '/MoonWebsite/img/8Phases/phase-premier-quartier.jpg',
+    '/MoonWebsite/img/8Phases/phase-gibbeuse-croissante.jpg',
+    '/MoonWebsite/img/8Phases/phase-pleine-lune.jpg',
+    '/MoonWebsite/img/8Phases/phase-gibbeuse-decroissante.jpg',
+    '/MoonWebsite/img/8Phases/phase-dernier-quartier.jpg',
+    '/MoonWebsite/img/8Phases/dernier-croissant.jpg',
     
     // Transparent (Planètes)
-    '/img/Transparent/earth.png',
-    '/img/Transparent/Jupiter.png',
-    '/img/Transparent/Mars.webp',
-    '/img/Transparent/Mercure.webp',
-    '/img/Transparent/MoonTransparent.png',
-    '/img/Transparent/Neptune.webp',
-    '/img/Transparent/Pluton.webp',
-    '/img/Transparent/Saturn_from_Hubble.png',
-    '/img/Transparent/Uranus.png',
-    '/img/Transparent/Venus-PNG-Background.png',
+    '/MoonWebsite/img/Transparent/earth.png',
+    '/MoonWebsite/img/Transparent/Jupiter.png',
+    '/MoonWebsite/img/Transparent/Mars.webp',
+    '/MoonWebsite/img/Transparent/Mercure.webp',
+    '/MoonWebsite/img/Transparent/MoonTransparent.png',
+    '/MoonWebsite/img/Transparent/Neptune.webp',
+    '/MoonWebsite/img/Transparent/Pluton.webp',
+    '/MoonWebsite/img/Transparent/Saturn_from_Hubble.png',
+    '/MoonWebsite/img/Transparent/Uranus.png',
+    '/MoonWebsite/img/Transparent/Venus-PNG-Background.png',
 ];
 
 // Installation : on met tout en cache
@@ -50,7 +50,9 @@ self.addEventListener('install', (event) => {
     event.waitUntil(
         caches.open(CACHE_NAME).then((cache) => {
             console.log('[SW] Mise en cache des fichiers...');
-            return cache.addAll(FILES_TO_CACHE);
+            return cache.addAll(FILES_TO_CACHE).catch((err) => {
+                console.error('[SW] Erreur de cache :', err);
+            });
         })
     );
     self.skipWaiting();
@@ -82,7 +84,7 @@ self.addEventListener('fetch', (event) => {
             }
             return fetch(event.request).then((networkResponse) => {
                 // On met aussi en cache les nouvelles ressources (ex: photos perso si chargées)
-                if (networkResponse.status === 200) {
+                if (networkResponse && networkResponse.status === 200) {
                     const responseClone = networkResponse.clone();
                     caches.open(CACHE_NAME).then((cache) => {
                         cache.put(event.request, responseClone);
@@ -92,7 +94,7 @@ self.addEventListener('fetch', (event) => {
             }).catch(() => {
                 // Hors-ligne et pas en cache : page de fallback
                 if (event.request.destination === 'document') {
-                    return caches.match('/index.html');
+                    return caches.match('/MoonWebsite/index.html');
                 }
             });
         })
