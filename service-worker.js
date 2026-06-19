@@ -1,21 +1,15 @@
-const CACHE_NAME = 'agamoon-v4';
-
-// Version simplifiée pour éviter les erreurs 404
-const FILES_TO_CACHE = [
-    '/MoonWebsite/index.html',
-    '/MoonWebsite/style.css',
-    '/MoonWebsite/manifest.json',
-    '/MoonWebsite/img/LogoWebSite.png'
-];
+const CACHE_NAME = 'agamoon-v6';
 
 self.addEventListener('install', event => {
     event.waitUntil(
-        caches.open(CACHE_NAME)
-            .then(cache => {
-                console.log('[SW] Cache ouvert');
-                return cache.addAll(FILES_TO_CACHE);
-            })
-            .catch(err => console.error('[SW] Erreur cache:', err))
+        caches.open(CACHE_NAME).then(cache => {
+            return cache.addAll([
+                '/MoonWebsite/index.html',
+                '/MoonWebsite/style.css',
+                '/MoonWebsite/manifest.json',
+                '/MoonWebsite/img/LogoWebSite.png'
+            ]);
+        })
     );
     self.skipWaiting();
 });
@@ -37,9 +31,7 @@ self.addEventListener('fetch', event => {
         caches.match(event.request)
             .then(response => response || fetch(event.request))
             .catch(() => {
-                if (event.request.destination === 'document') {
-                    return caches.match('/MoonWebsite/index.html');
-                }
+                return caches.match('/MoonWebsite/index.html');
             })
     );
 });
