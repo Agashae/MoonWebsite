@@ -1,9 +1,10 @@
-const CACHE_NAME = 'agamoon-v6';
+const CACHE_NAME = 'agamoon-v7';
 
 self.addEventListener('install', event => {
     event.waitUntil(
         caches.open(CACHE_NAME).then(cache => {
             return cache.addAll([
+                '/MoonWebsite/',
                 '/MoonWebsite/index.html',
                 '/MoonWebsite/style.css',
                 '/MoonWebsite/manifest.json',
