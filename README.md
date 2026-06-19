@@ -133,6 +133,8 @@ AgaMoon est une **Progressive Web App** — elle peut être installée comme une
 
 **`service-worker.js`** — met en cache toutes les ressources du site au premier chargement, puis les sert localement pour un accès hors-ligne
 
+> Si ça ne marche pas, vider le cache
+
 ---
 ## CNAME
 achat sur http://infomaniak.com/fr pour ~ 4.-/an
