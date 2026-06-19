@@ -118,13 +118,17 @@ AgaMoon est une **Progressive Web App** — elle peut être installée comme une
 
 ### Captures d'écran
 
-| Installation sur Chrome PC | App ouverte sur Chrome PC | App sur l'écran d'accueil iPhone (A) |
+| Installation sur Chrome PC | App ouverte sur Chrome PC | App sur l'écran d'accueil iPhone |
 |:-:|:-:|:-:|
 | <img src="img/Screenshots/InstallerAppChromePC.png" width="300"> | <img src="img/Screenshots/AppChromeOnPC.png" width="300"> | <img src="img/Screenshots/AppHomeOniPhone.jpg" width="200"> |
 
 | App ouverte | Site web dans Safari iPhone | Menu de partage Safari iPhone |
 |:-:|:-:|:-:|
 | <img src="img/Screenshots/AppSafariOniPhone.jpg" width="200"> | <img src="img/Screenshots/WebsiteSafariOniPhone.jpg" width="200"> | <img src="img/Screenshots/WebsiteShareOniPhone.jpg" width="200"> |
+
+| App sur PC |
+|:-:|
+| <img src="img/Screenshots/AppOnPC.png" width="300"> |
 
 ### Fichiers PWA
 >Cette partie, c'est Claude qui m'a aidé à la réalisé.
@@ -164,10 +168,9 @@ achat sur http://infomaniak.com/fr pour ~ 4.-/an
 
 ## Utilisation de l'IA
 L’IA a été utilisé pour m’aider à :
-•	Structurer/nettoyer mon code HTML/CSS
-•	Création des fichiers JS/JSON du PWA
-•	Me renseigner sur le PWA et sur l’utilisation de GitHub
-•	Ajouter mon CdC dans le Readme
-
+* Structurer/nettoyer mon code HTML/CSS
+* Création des fichiers JS/JSON du PWA
+* Me renseigner sur le PWA et sur l'utilisation de GitHub
+* Ajouter mon CdC dans le Readme
 
 *Projet réalisé dans le cadre du DemoMot — 2026*
