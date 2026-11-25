@@ -2,7 +2,7 @@
 
 Site web éducatif sur la Lune, réalisé durant le **DemoMot 2025-2026** — puis transformé en application web installable (PWA)
 
-**[Ouvrir AgaMoon](https://agashae.github.io/MoonWebsite/)**
+**[Le lien n'est plus disponible et est sous un projet centralisant tous mes sites web](https://agashae.github.io/SitesWeb/MoonWebsite/index.html)**
 
 ---
 
@@ -28,7 +28,7 @@ DemoMot
 | **Titre** | AgaMoon |
 | **Description** | Site web éducatif sur la Lune, réalisé durant le DemoMot 2025-2026. Il est dédié à la Lune : données scientifiques, phases lunaires, histoire de l'exploration spatiale et galerie photo personnelle. |
 | **Matériel et logiciels** | Visual Studio Code, HTML5, CSS3 |
-| **Prérequis** | Être motivé !, I293 |
+| **Prérequis** | Être motivé ! Et avoir suivi le i293 |
 
 ### Cahier des charges
 
@@ -159,13 +159,11 @@ L'IA a été utilisée pour m'aider à :
 
 ## 🌐 Mise en ligne — GitHub Pages
 
-Le site est hébergé gratuitement via **GitHub Pages** et accessible à l'adresse :
+Le site est hébergé gratuitement via **GitHub Pages**, on peut y accéder via n'importe quel réseau et il y a de l'HTTPS natif
 
-> **[https://agashae.github.io/MoonWebsite/](https://agashae.github.io/MoonWebsite/)**
+> **[Même lien qu'en haut](https://agashae.github.io/SitesWeb/MoonWebsite/index.html)**
 
-GitHub Pages a été choisi pour deux raisons :
-- Accès depuis n'importe quel réseau (y compris celui de l'école)
-- HTTPS natif, indispensable pour faire fonctionner la PWA
+
 
 ---
 
@@ -225,7 +223,7 @@ AgaMoon est une **Progressive Web App** — elle peut être installée comme une
 
 Achat sur [Infomaniak](https://www.infomaniak.com/fr) pour environ **4 CHF/an**
 
-> **[https://agashae.space](https://agashae.space)**
+> **[https://agashae.space : Il est donc inactif depuis octobre 2026...](https://agashae.space)**
 
 ---
 
